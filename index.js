@@ -19,12 +19,12 @@ main()
 const ItemRoutes = require("./src/routes/itemRoute");
 const CategoryRoute = require("./src/routes/categoryRoute");
 
-app.use("/api", ItemRoutes);
-app.use("/api", CategoryRoute);
-
 app.get("/", (req, res) => {
   res.send("Running the Food Recipe App");
 });
+
+app.use("/api", ItemRoutes);
+app.use("/api", CategoryRoute);
 
 app.listen(port, () => {
   console.log(`server start on port ${port}`);
